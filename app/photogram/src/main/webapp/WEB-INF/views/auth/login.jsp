@@ -90,9 +90,8 @@
 
             $.ajax({
                 type: "POST",
-                dataType: "json",
                 url: url,
-                contentType: 'application/json; charset=utf-8',
+                contentType : 'application/json; charset=utf-8',
                 data: JSON.stringify(userDTO),
                 success: function (response) {
                     alert(response);

@@ -27,7 +27,7 @@
                          <!--로고end-->
 
                          <!--회원가입 인풋-->
-                        <form class="login__input"  action="/auth/signup.json" method="post">
+                        <form class="login__input" id = "joinForm">
                             <input type="text" id="name" placeholder="이름" required="required"  maxlength="30"/>
                             <input type="password" id="pw" placeholder="패스워드" required="required" />
                             <input type="email" id="email" placeholder="이메일" required="required" />
@@ -55,16 +55,18 @@
 
 <script>
     $(document).ready(function () {
-        oSignUp = new signup();
+         oSignUp = new signupTry();
 
         $('#signUpClick').click(function () {
             oSignUp.signupTry();
+            return false;
         });
     });
 
-    function signup() {
-        this.signupTry = function () {
+    function signupTry() {
+         this.signupTry = function () {
             let url = "/auth/signup.json";
+
 
             let userDTO = {
                 name: $('#name').val(),
@@ -75,16 +77,17 @@
 
             $.ajax({
                 type: "POST",
-                dataType: "json",
                 url: url,
                 contentType: 'application/json; charset=utf-8',
                 data: JSON.stringify(userDTO),
                 success: function (response) {
-                    console.log(JSON.stringify(response, null, 2));
+                    alert(JSON.stringify(response));
+                    console.log(JSON.stringify(response));
+                    window.location.href = "/";
                 },
-                error: function (xhr, textStatus, errorThrown) {
-                    alert("에러: " + textStatus + " " + errorThrown);
-                    console.error("에러: " + textStatus, errorThrown);
+                error: function (xhr, textStatus, errorThrown ,response) {
+                    alert("에러: " + textStatus + " " + errorThrown + "response : " + response);
+                    console.log("에러: " + textStatus + " " + errorThrown + "response : " + response);
                 }
             });
         };

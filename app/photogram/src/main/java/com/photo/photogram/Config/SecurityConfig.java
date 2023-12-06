@@ -35,8 +35,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().permitAll() // 위에 주소를 제외하고 모든 인증 허용
                 .and()
                 .formLogin()
-                .loginPage("/auth/login") // 로그인 페이지 주소
+                .loginPage("/auth/login") // 로그인 페이지 주소 GET
+                .loginProcessingUrl("/auth/login.json") // 로그인 프로세스 POST
                 .defaultSuccessUrl("/");
+
     }
 
 }

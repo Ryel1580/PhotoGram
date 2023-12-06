@@ -39,6 +39,9 @@ dependencies {
 	implementation 'javax.servlet:jstl'
 	// validation
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-validation', version: '2.4.4'
+	//JSON 타입 반환을 위한 디팬던시 추가
+	implementation 'com.fasterxml.jackson.core:jackson-databind'
+
 
 
 }

@@ -28,6 +28,9 @@ public class UserServiceImpl implements UserService {
             logger.info("EMAIL" + userDTO.getEmail());
             logger.info("PW" + userDTO.getPw());
             logger.info("===============================================");
+            String rawPassword = userDTO.getPw(); // 기존 pw 를 암호화
+            String encPassword = bCryptPasswordEncoder.encode(rawPassword); // 암호화된 패스워드 디코딩
+            userDTO.setPw(encPassword);
 
             UserDTO result = userDAO.selectLogin(userDTO);
 

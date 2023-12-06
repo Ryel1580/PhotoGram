@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Column;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 @Data
@@ -13,7 +14,7 @@ import java.util.Date;
 @AllArgsConstructor
 public class UserDTO {
     int userId;
-    @Max(20)
+    @Size(min =2 , max = 20)
     @Column(nullable = false) // null 불가능
     String name;
     @NotBlank// 빈문자열 null 스페이스바 안됨
