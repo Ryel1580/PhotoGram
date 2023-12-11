@@ -25,9 +25,9 @@
                         <h1><img src="/images/logo.jpg" alt=""></h1>
 
                         <!-- 로그인 인풋 -->
-                        <form id="login__input" action="/auth/login.json" method="POST">
-                            <input type="text" name="username" id="username" placeholder="이메일" required="required" value="test@test.com"/>
-                            <input type="password" name="password" id="password" placeholder="비밀번호" required="required" value="123"/>
+                        <form id="login__input" method="POST">
+                            <input type="text" id="email" placeholder="이메일" required="required" />
+                            <input type="password" id="pw" placeholder="비밀번호" required="required" />
                             <!-- 버튼에 ID 추가 -->
                             <button id="loginClick">로그인</button>
                         </form>
@@ -71,5 +71,38 @@
 </html>
 
 <script>
+    $(document).ready(function () {
+        oLogin = new login();
 
+        $('#loginClick').click(function () {
+            oLogin.loginTry();
+        });
+    });
+
+    function login() {
+        this.loginTry = function () {
+            let url = "/auth/login.json";
+
+            let userDTO = {
+                email: $('#email').val(),
+                pw: $('#pw').val()
+            };
+
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                url: url,
+                contentType: 'application/json; charset=utf-8',
+                data: JSON.stringify(userDTO),
+                success: function (response) {
+                    alert(response);
+                    console.log(response);
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("에러: " + textStatus + " " + errorThrown);
+                    console.error("에러: " + textStatus, errorThrown);
+                }
+            });
+        };
+    }
 </script>

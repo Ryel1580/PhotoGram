@@ -20,32 +20,26 @@ public class PrincipalDetailService implements UserDetailsService {
     @Autowired
     UserDAO userDAO;
 
-    @Autowired
-    UserDTO userDTO;
-
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        logger.info("====================RcvData====================");
-        logger.info("EMAIL" + userDTO.getEmail());
-        logger.info("PW" + userDTO.getPw());
-        logger.info("===============================================");
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 
-        UserDTO result = userDAO.selectLogin(userDTO);
+        UserDTO result = userDAO.selectLogin(email);
 
         if (result != null) {
             logger.info("==========Result Data==========");
-            logger.info("ID" +result.getUserId());
-            logger.info("EMAIL" + result.getEmail());
-            logger.info("PW" + result.getPw());
+            logger.info("ID : " +result.getUserId());
+            logger.info("EMAIL : " + result.getEmail());
+            logger.info("PW : " + result.getPw());
             logger.info("===============================");
 
-            return new PrincipalDetails(userDTO);
+            return new PrincipalDetails(result);
 
         } else {
             logger.info("==========Result Data: Login Failed==========");
+            return null;
         }
-        return null;
+
     }
 }

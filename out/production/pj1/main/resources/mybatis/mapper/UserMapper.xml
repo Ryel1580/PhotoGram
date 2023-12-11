@@ -9,8 +9,8 @@
         ,EMAIL ,TEL ,RGSDATE ,RGSUSR ,MODDATE ,MODUSR
         from i_usr_mn
         WHERE EMAIL = #{email}
+        AND PW = #{pw}
     </select>
-
 
     <insert id="signup" parameterType="com.photo.photogram.DTO.UserDTO">
         INSERT INTO i_usr_mn (

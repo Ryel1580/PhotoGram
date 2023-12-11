@@ -8,7 +8,7 @@
     <title>Photogram</title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
     <!-- jQuery CDN을 이용하여 불러오기 -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
@@ -27,11 +27,11 @@
                          <!--로고end-->
 
                          <!--회원가입 인풋-->
-                        <form class="login__input" id = "joinForm">
-                            <input type="text" name="username" id="name" placeholder="이름" required="required"  maxlength="30"/>
-                            <input type="password" name="password" id="pw" placeholder="패스워드" required="required" />
-                            <input type="email" name="email" id="email" placeholder="이메일" required="required" />
-                            <input type="text" name="name" id="tel" placeholder="전화번호" required="required" />
+                        <form class="login__input"  action="/auth/signup.json" method="post">
+                            <input type="text" id="name" placeholder="이름" required="required"  maxlength="30"/>
+                            <input type="password" id="pw" placeholder="패스워드" required="required" />
+                            <input type="email" id="email" placeholder="이메일" required="required" />
+                            <input type="text" id="tel" placeholder="전화번호" required="required" />
                             <button id = 'signUpClick'>가입</button>
                         </form>
                         <!--회원가입 인풋end-->
@@ -55,18 +55,16 @@
 
 <script>
     $(document).ready(function () {
-         oSignUp = new signupTry();
+        oSignUp = new signup();
 
         $('#signUpClick').click(function () {
             oSignUp.signupTry();
-            return false;
         });
     });
 
-    function signupTry() {
-         this.signupTry = function () {
+    function signup() {
+        this.signupTry = function () {
             let url = "/auth/signup.json";
-
 
             let userDTO = {
                 name: $('#name').val(),
@@ -77,17 +75,16 @@
 
             $.ajax({
                 type: "POST",
+                dataType: "json",
                 url: url,
                 contentType: 'application/json; charset=utf-8',
                 data: JSON.stringify(userDTO),
                 success: function (response) {
-                    alert(JSON.stringify(response));
-                    console.log(JSON.stringify(response));
-                    window.location.href = "/";
+                    console.log(JSON.stringify(response, null, 2));
                 },
-                error: function (xhr, textStatus, errorThrown ,response) {
-                    alert("에러: " + textStatus + " " + errorThrown + "response : " + response);
-                    console.log("에러: " + textStatus + " " + errorThrown + "response : " + response);
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("에러: " + textStatus + " " + errorThrown);
+                    console.error("에러: " + textStatus, errorThrown);
                 }
             });
         };

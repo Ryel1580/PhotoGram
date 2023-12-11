@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" type="text/css" th:href="@{css/Chat.css}">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div>
+    <div class="wrap">
+        <div class="chat send">
+            <div class="icon"><i class="fa-solid fa-user"></i></div>
+            <div class="textbox">안녕하세요. 반갑습니다.</div>
+        </div>
+        <div class="chat receive">
+            <div class="icon"><i class="fa-solid fa-user"></i></div>
+            <div class="textbox">안녕하세요. 친절한효자손입니다. 그동안 잘 지내셨어요?</div>
+        </div>
+        <div class="chat send">
+            <div class="icon"><i class="fa-solid fa-user"></i></div>
+            <div class="textbox">아유~ 너무요너무요! 요즘 어떻게 지내세요?</div>
+        </div>
+        <div class="chat receive">
+            <div class="icon"><i class="fa-solid fa-user"></i></div>
+            <div class="textbox">뭐~ 늘 똑같은 하루 하루를 보내는 중이에요. 코로나가 다시 극성이어서 모이지도 못하구 있군요 ㅠㅠ 얼른 좀 잠잠해졌으면 좋겠습니다요!</div>
+        </div>
+    </div>
+    <div class="inputArea">
+        <form class="label" id="submitMsg">
+            <textarea class="textBox" id = "msgData" type="text"></textarea>
+            <button id="submit" th:text="${send}"></button>
+        </form>
+    </div>
+</div>
+
+    <script>
+
+        let sendMsg = document.getElementById("submit");
+        submit.addEventListener("click", function() {
+            let msgData = document.getElementById("msgData").value;
+            console.log("======dataSendSuccess!!======")
+        });
+
+
+    </script>
+
+</body>
+
+</html>

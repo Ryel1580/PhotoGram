@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 @Mapper
 @Repository
 public interface UserDAO {
-    UserDTO selectLogin (UserDTO userDTO);
-
+    UserDTO selectLogin(String email);
     boolean signup (UserDTO userDTO);
 }

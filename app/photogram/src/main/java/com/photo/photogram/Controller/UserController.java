@@ -41,27 +41,6 @@ public class UserController {
         return url+"/login";
     }
 
-//    @PostMapping("/login.json")
-//    public ResponseEntity<Object> login(@RequestBody UserDTO userDTO, BindingResult bindingResult, HttpServletRequest request) throws Exception {
-//        if (bindingResult.hasErrors()) {
-//            Map<String, String> errorMap = new HashMap<>();
-//
-//            for (FieldError error : bindingResult.getFieldErrors()) {
-//                errorMap.put(error.getField(), error.getDefaultMessage());
-//            }
-//            return new ResponseEntity<>(errorMap, HttpStatus.BAD_REQUEST);
-//        } else {
-//            try {
-//                HttpSession session = request.getSession();
-//                UserDTO result = userService.login(userDTO);
-//                session.setAttribute("userInfo", result);
-//                return new ResponseEntity<>("result : OK", HttpStatus.OK);
-//            } catch (Exception e) {
-//                return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
-//            }
-//        }
-//    }
-
     @GetMapping("/signup")
     public String signUp() throws Exception{
         logger.info(url+"/signup Call");

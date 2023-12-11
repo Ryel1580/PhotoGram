@@ -31,14 +31,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable(); //csrf 는 정상적인 방법과(홈페이지에서 가입) 비정상적인 방법(postman 등 사용해서) 하는방법을 구분하기 위해
         //csrf 토큰을 발행함. 일단 비활성화
         http.authorizeRequests()
-                .antMatchers( "/image/**", "/subscribe/**", "/comment/**").authenticated() // 해당 주소들만 인증이 필요하도록 설정
-                .anyRequest().permitAll() // 위에 주소를 제외하고 모든 인증 허용
-                .and()
+                    .antMatchers( "/","/image/**", "/subscribe/**", "/comment/**").authenticated() // 해당 주소들만 인증이 필요하도록 설정
+                    .anyRequest().permitAll() // 위에 주소를 제외하고 모든 인증 허용
+                    .and()
                 .formLogin()
-                .loginPage("/auth/login") // 로그인 페이지 주소 GET
-                .loginProcessingUrl("/auth/login.json") // 로그인 프로세스 POST
-                .defaultSuccessUrl("/");
-
+                    .loginPage("/auth/login") // 로그인 페이지 주소 GET
+                    .loginProcessingUrl("/auth/login.json") // 로그인 프로세스 POST
+                    .defaultSuccessUrl("/")
+                    .permitAll()
+                .and()
+                    .logout()
+                    .logoutUrl("/logout")
+                    .logoutSuccessUrl("/auth/login")
+                    .invalidateHttpSession(true) // 세션 날리기
+                    .permitAll();
     }
 
 }

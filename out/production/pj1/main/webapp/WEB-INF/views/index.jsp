@@ -6,7 +6,7 @@
     <title>Title</title>
 </head>
 <body>
-    <a href="/logout">로그아웃</a>
+    <a href="/sendMsg">test이동</a>
     <a href="/auth/login">login</a>
     <a href="/auth/signup">signup</a>
     <a href="/chat/">메시지</a>

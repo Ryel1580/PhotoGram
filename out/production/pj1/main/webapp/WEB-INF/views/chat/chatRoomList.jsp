@@ -26,29 +26,9 @@
 
     <script>
         $(document).ready(function(){
-
-             $.ajax({
-                        type: "GET",
-                        url: "/userinfo",
-                        success: function (response) {
-                            console.log(response);
-                            // 서버에서 받은 사용자 정보를 이용하여 필요한 동작 수행
-                        },
-                        error: function (error) {
-                            console.error("Failed to retrieve user information");
-                        }
-                    });
-
-            const username = "test";
             $("#sendMsg").on("click", (e) => {
                 send();
             });
-
-            const websocket = new WebSocket("ws://localhost:8080/ws/chat");
-
-            websocket.onmessage = onMessage;
-            websocket.onopen = onOpen;
-            websocket.onclose = onClose;
 
             function send(){
                 let MsgDTO ={

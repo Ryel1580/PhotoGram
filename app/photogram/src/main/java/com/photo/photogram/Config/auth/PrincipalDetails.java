@@ -21,7 +21,6 @@ public class PrincipalDetails implements UserDetails {
         this.userDTO = userDTO;
     }
 
-
     // 권한 가지고 있는가
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -38,7 +37,7 @@ public class PrincipalDetails implements UserDetails {
 
     @Override
     public String getUsername() {
-        return userDTO.getName();
+        return userDTO.getEmail();
     }
 
     @Override

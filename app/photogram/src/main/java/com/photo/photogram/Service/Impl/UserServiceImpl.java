@@ -23,31 +23,6 @@ public class UserServiceImpl implements UserService {
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Override
-    public UserDTO login(UserDTO userDTO){
-            logger.info("====================RcvData====================");
-            logger.info("EMAIL" + userDTO.getEmail());
-            logger.info("PW" + userDTO.getPw());
-            logger.info("===============================================");
-            String rawPassword = userDTO.getPw(); // 기존 pw 를 암호화
-            String encPassword = bCryptPasswordEncoder.encode(rawPassword); // 암호화된 패스워드 디코딩
-            userDTO.setPw(encPassword);
-
-            UserDTO result = userDAO.selectLogin(userDTO);
-
-            if (result != null) {
-                logger.info("==========Result Data==========");
-                logger.info("EMAIL" + result.getEmail());
-                logger.info("PW" + result.getPw());
-                logger.info("===============================");
-                return result;
-            } else {
-                logger.info("==========Result Data: Login Failed==========");
-                logger.info("EMAIL" + result.getEmail());
-                logger.info("PW" + result.getPw());
-                return null;
-            }
-        }
-    @Override
     @Transactional
     public void signup(UserDTO userDTO){
         String rawPassword = userDTO.getPw(); // 기존 pw 를 암호화
