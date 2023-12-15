@@ -23,8 +23,6 @@ import java.util.List;
 @RequestMapping(value = "/chat")
 @ServerEndpoint("/websocket")
 public class ChatController extends Socket {
-    String url = "chat";
-
     @Autowired
     ChatService chatService;
 
@@ -32,10 +30,9 @@ public class ChatController extends Socket {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-
     @GetMapping("/")
-    public String chat() throws Exception{
-        return url+"/chat";
+    public String msg(){
+        return "chat/chat";
     }
 
     @GetMapping("/getMsgAll")
