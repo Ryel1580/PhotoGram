@@ -1,12 +1,12 @@
-@import "header#css";
+@import "header.css";
 
 /*메인*/
-#main {
+.main {
   padding-top: 54px;
 }
 
 /*컨테이너*/
-#main #container {
+.main .container {
   padding-top: 30px;
   width: 935px;
   display: flex;
@@ -15,21 +15,21 @@
 }
 
 /*게시물리스트*/
-#main #container #story-list {
+.main .container .story-list {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
 /*게시물 리스트 아이템*/
-#main #container #story-list #story-list__item {
+.main .container .story-list .story-list__item {
   margin-bottom: 30px;
   border: 1px solid #dbdbdb;
   border-radius: 4px;
 }
 
 /*리스트 아이템 헤더부분*/
-#main #container #story-list #story-list__item #sl__item__header {
+.main .container .story-list .story-list__item .sl__item__header {
   width: 100%;
   height: 60px;
   display: flex;
@@ -37,16 +37,16 @@
 }
 
 /*리스트 아이템 헤더 div*/
-#main #container #story-list #story-list__item #sl__item__header div {
+.main .container .story-list .story-list__item .sl__item__header div {
   margin-left: 10px;
 }
 
 /*리스트 아이템 헤더 이미지영역 박스*/
-#main
-  #container
-  #story-list
-  #story-list__item
-  #sl__item__header
+.main
+  .container
+  .story-list
+  .story-list__item
+  .sl__item__header
   div:nth-child(1) {
   width: 40px;
   height: 40px;
@@ -56,11 +56,11 @@
 }
 
 /*리스트 아이템 헤더 실제이미지*/
-#main
-  #container
-  #story-list
-  #story-list__item
-  #sl__item__header
+.main
+  .container
+  .story-list
+  .story-list__item
+  .sl__item__header
   div:nth-child(1)
   img {
   width: 100%;
@@ -69,41 +69,41 @@
 }
 
 /* 게시물 이미지 박스*/
-#main #container #story-list #story-list__item #sl__item__img {
+.main .container .story-list .story-list__item .sl__item__img {
   height: 600px;
   min-height: 300px;
 }
 
 /* 게시물 이미지*/
-#main #container #story-list #story-list__item #sl__item__img img {
+.main .container .story-list .story-list__item .sl__item__img img {
   width: 100%;
   height: 100%;
 }
 
 /* 게시물 이미지 밑에 영역들 */
-#main #container #story-list #story-list__item #sl__item__contents {
+.main .container .story-list .story-list__item .sl__item__contents {
   display: flex;
   flex-direction: column;
 }
 
 /*좋아요 버튼영역*/
-#main
-  #container
-  #story-list
-  #story-list__item
-  #sl__item__contents
-  #sl__item__contents__icon {
+.main
+  .container
+  .story-list
+  .story-list__item
+  .sl__item__contents
+  .sl__item__contents__icon {
   height: 40px;
   padding: 5px 0;
 }
 
 /*좋아요 실제 버튼*/
-#main
-  #container
-  #story-list
-  #story-list__item
-  #sl__item__contents
-  #sl__item__contents__icon
+.main
+  .container
+  .story-list
+  .story-list__item
+  .sl__item__contents
+  .sl__item__contents__icon
   button {
   background-color: transparent;
   width: 40px;
@@ -114,21 +114,21 @@
 }
 
 /*게시물 내용*/
-#main
-  #container
-  #story-list
-  #story-list__item
-  #sl__item__contents
-  #sl__item__contents__content {
+.main
+  .container
+  .story-list
+  .story-list__item
+  .sl__item__contents
+  .sl__item__contents__content {
   padding: 5px 15px;
 }
 
 /*게시물 like 갯수스타일*/
-#main
-  #container
-  #story-list
-  #story-list__item
-  #sl__item__contents #like{
+.main
+  .container
+  .story-list
+  .story-list__item
+  .sl__item__contents .like{
 	background-color: transparent;
 	border: 0;
 	color: #aaa;
@@ -137,28 +137,28 @@
 	text-indent: 15px;
 }
 /*게시물 좋아요 count값 */
-#main
-  #container
-  #story-list
-  #story-list__item
-#sl__item__contents #like b{
+.main
+  .container
+  .story-list
+  .story-list__item
+.sl__item__contents .like b{
 	margin-right: 5px;
 }
 
 /*태그영역*/
-#sl__item__contents__tags{
+.sl__item__contents__tags{
   height: 40px;
   padding: 5px 10px;
   color: #0080ff;
 }
 
 /*코멘트 = 댓글 */
-#main
-  #container
-  #story-list
-  #story-list__item
-  #sl__item__contents
-  #sl__item__contents__comment
+.main
+  .container
+  .story-list
+  .story-list__item
+  .sl__item__contents
+  .sl__item__contents__comment
   {
   display:flex;
   justify-content: space-between;
@@ -171,28 +171,28 @@
 }
 
 /*댓글 삭제버튼*/
-#main
-  #container
-  #story-list
-  #story-list__item
-  #sl__item__contents
-#sl__item__contents__comment button{ border: none; outline: none; background: #fff; cursor: pointer;}
+.main
+  .container
+  .story-list
+  .story-list__item
+  .sl__item__contents
+.sl__item__contents__comment button{ border: none; outline: none; background: #fff; cursor: pointer;}
 
 /* 댓글 입력창*/
-#main #container #story-list #story-list__item #sl__item__input {
+.main .container .story-list .story-list__item .sl__item__input {
   display: flex;
   border-top: 1px solid #dbdbdb;
 }
 
 /*입력 인풋*/
-#main #container #story-list #story-list__item #sl__item__input input {
+.main .container .story-list .story-list__item .sl__item__input input {
   flex: 9;
   height: 56px;
   border: 0;
   padding-left: 15px;
 }
 /* 입력하기 버튼 */
-#main #container #story-list #story-list__item #sl__item__input button {
+.main .container .story-list .story-list__item .sl__item__input button {
   flex: 1;
   height: 56px;
   border: 0;
@@ -203,17 +203,17 @@
 }
 
 /* Event */
-#main
-  #container
-  #story-list
-  #story-list__item
-  #sl__item__contents
-  #sl__item__contents__icon
+.main
+  .container
+  .story-list
+  .story-list__item
+  .sl__item__contents
+  .sl__item__contents__icon
   button:first-child
-  #active {
+  .active {
   color: red;
 }
 
-#profile-image {
+.profile-image {
   border: 2px solid #8a3ab8;
 }

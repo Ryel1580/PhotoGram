@@ -35,6 +35,8 @@ dependencies {
 	testImplementation 'org.springframework.security:spring-security-test'
 	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.3.1'
 
+	// 시큐리티 테그 라이브러리
+	implementation 'org.springframework.security:spring-security-taglibs:5.5.0'
 	// mybatis
 	implementation group: 'org.apache.tomcat', name: 'tomcat-jasper', version: '9.0.41'
 	implementation 'javax.servlet:jstl'
@@ -42,7 +44,6 @@ dependencies {
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-validation', version: '2.4.4'
 	//JSON 타입 반환을 위한 디팬던시 추가
 	implementation 'com.fasterxml.jackson.core:jackson-databind'
-
 
 
 }

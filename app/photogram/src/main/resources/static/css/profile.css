@@ -1,14 +1,14 @@
-@import "header#css";
-@import "footer#css";
+@import "header.css";
+@import "footer.css";
 
 /* Fonts */
 @font-face {
   font-family: is;
-  src: url(##/fonts/billabong#ttf);
+  src: url(../fonts/billabong.ttf);
 }
 
 
-#profileContainer {
+.profileContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -18,27 +18,27 @@
 }
 
 /* Profile */
-#profile {
+.profile {
   height: 170px;
   display: flex;
   margin: 54px 0 44px;
 }
-#profile > #profileContainer {
+.profile > .profileContainer {
   padding: 30px 20px 0;
 }
-#profile #profile-left,
-#profile #profile-right {
+.profile .profile-left,
+.profile .profile-right {
   height: 100%;
 }
-#profile #profile-left {
+.profile .profile-left {
   flex-basis: 40%;
   display: flex;
   justify-content: center;
 }
-#profile #profile-right {
+.profile .profile-right {
   flex-basis: 60%;
 }
-#profile #profile-left #profile-img-wrap {
+.profile .profile-left .profile-img-wrap {
   width: 162px;
   height: 162px;
   padding: 6px;
@@ -46,21 +46,21 @@
   position: relative;
   cursor: pointer;
 }
-#profile #profile-left #profile-img-wrap img {
+.profile .profile-left .profile-img-wrap img {
   width: 100%;
   height: 100%;
   border-radius: 50%;
 }
-#profile #profile-right #name-group {
+.profile .profile-right .name-group {
   display: flex;
   margin-bottom: 20px;
 }
-#profile #profile-right #name-group h2 {
+.profile .profile-right .name-group h2 {
   font-weight: normal;
   font-family: "Montserrat", sans-serif;
   margin-right: 30px;
 }
-#profile #profile-right #name-group #cta {
+.profile .profile-right .name-group .cta {
   margin-right: 10px;
   padding: 5px 9px;
   border: 1px solid rgba(var(--ca6, 219, 219, 219), 1);
@@ -69,101 +69,101 @@
   font-weight: bold;
   background: transparent;
 }
-#profile #profile-right #name-group #modi {
+.profile .profile-right .name-group .modi {
   border: none;
   background: none;
 }
-#profile #profile-right #name-group #modi i {
+.profile .profile-right .name-group .modi i {
   font-size: 20px;
   padding: 8px;
 }
-#profile #profile-right #subscribe {
+.profile .profile-right .subscribe {
   height: 28px;
   margin-bottom: 5px;
 }
-#profile #profile-right #subscribe ul {
+.profile .profile-right .subscribe ul {
   display: flex;
 }
-#profile #profile-right #subscribe ul li {
+.profile .profile-right .subscribe ul li {
   margin-right: 18px;
 }
-#profile #profile-right #subscribe ul li a {
+.profile .profile-right .subscribe ul li a {
   font-size: 16px;
   color: #262626;
 }
-#profile #profile-right #subscribe ul li a span {
+.profile .profile-right .subscribe ul li a span {
   font-weight: bold;
   margin-left: 4px;
 }
-#profile #profile-right #state h4 {
+.profile .profile-right .state h4 {
   margin-bottom: 2px;
 }
 
 /* story */
-#story {
+.story {
   height: 130px;
   margin-bottom: 44px;
 }
-#story #profileContainer {
+.story .profileContainer {
   padding: 0 48px;
   display: flex;
   justify-content: flex-start;
 }
-#story #profileContainer #story-item {
+.story .profileContainer .story-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0 24px;
   cursor: pointer;
 }
-#story #profileContainer #story-item #stroy-img {
+.story .profileContainer .story-item .stroy-img {
   width: 87px;
   height: 87px;
   padding: 3px;
   border: 1px solid gainsboro;
   border-radius: 50%;
 }
-#story #profileContainer #story-item #stroy-img img {
+.story .profileContainer .story-item .stroy-img img {
   width: 100%;
   height: 100%;
   border-radius: 50%;
 }
-#story #profileContainer #story-item #story-name {
+.story .profileContainer .story-item .story-name {
   padding-top: 10px;
 }
-#story #profileContainer #story-item #story-name p {
+.story .profileContainer .story-item .story-name p {
   font-size: 14px;
   font-weight: bold;
 }
 
 /* Tab-controller */
-#gallery #profileContainer #controller {
+.gallery .profileContainer .controller {
   height: 20px;
   width: 100%;
   border-top: 1px solid #dbdbdb;
 }
-#gallery #profileContainer #controller #con-list #tab-item {
+.gallery .profileContainer .controller .con-list .tab-item {
   margin-right: 60px;
   height: 100%;
   line-height: 53px;
 }
-#gallery #profileContainer #controller #con-list {
+.gallery .profileContainer .controller .con-list {
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-#gallery #profileContainer #controller #con-list a {
+.gallery .profileContainer .controller .con-list a {
   color: rgba(var(--f52, 142, 142, 142), 1);
   display: inline-block;
   height: 100%;
 }
-#gallery #profileContainer #controller #con-list i {
+.gallery .profileContainer .controller .con-list i {
   font-size: 8px;
   margin-right: 6px;
   vertical-align: 1px;
 }
-#gallery #profileContainer #controller #con-list span {
+.gallery .profileContainer .controller .con-list span {
   font-size: 12px;
 }
 
@@ -172,21 +172,21 @@
   width: 100%;
   margin-bottom: 30px;
 }
-#tab-content #tab-1-content #tab-1-content-inner {
+#tab-content #tab-1-content .tab-1-content-inner {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 15px;
 }
-#tab-content #tab-1-content #tab-1-content-inner #img-box {
+#tab-content #tab-1-content .tab-1-content-inner .img-box {
   position: relative;
   height: 293px;
 }
-#tab-content #tab-1-content #tab-1-content-inner #img-box img {
+#tab-content #tab-1-content .tab-1-content-inner .img-box img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-#tab-content #tab-1-content #tab-1-content-inner #img-box #comment {
+#tab-content #tab-1-content .tab-1-content-inner .img-box .comment {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -199,43 +199,43 @@
   cursor: pointer;
   opacity: 0;
 }
-#tab-content #tab-1-content #tab-1-content-inner #img-box:hover #comment {
-  background: rgba(0, 0, 0, 0#6);
+#tab-content #tab-1-content .tab-1-content-inner .img-box:hover .comment {
+  background: rgba(0, 0, 0, 0.6);
   opacity: 1;
 }
-#tab-content #tab-1-content #tab-1-content-inner #img-box #comment a,#tab-content #tab-1-content #tab-1-content-inner #img-box #comment a span{
+#tab-content #tab-1-content .tab-1-content-inner .img-box .comment a,#tab-content #tab-1-content .tab-1-content-inner .img-box .comment a span{
   color: #fff;
 }
-#tab-content #tab-1-content #tab-1-content-inner #img-box #comment a i {
+#tab-content #tab-1-content .tab-1-content-inner .img-box .comment a i {
   margin-right: 10px;
 }
 
 /* Sub2 */
-#popular {
+.popular {
   width: 100%;
 }
-#popular #profileContainer {
+.popular .profileContainer {
   flex-direction: column;
 }
-#popular #profileContainer #popular-gallery {
+.popular .profileContainer .popular-gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 30px;
   margin-bottom: 30px;
 }
-#popular #profileContainer #popular-gallery#popular-top #p-img-box {
+.popular .profileContainer .popular-gallery.popular-top .p-img-box {
   width: 100%;
   min-height: 292px;
 }
-#popular #profileContainer #popular-gallery#popular-top #p-img-box:nth-child(2) {
+.popular .profileContainer .popular-gallery.popular-top .p-img-box:nth-child(2) {
   grid-column: 2/4;
   grid-row: 1/3;
 }
-#popular #profileContainer #popular-gallery #p-img-box {
+.popular .profileContainer .popular-gallery .p-img-box {
   width: 292px;
   min-height: 292px;
 }
-#popular #profileContainer #popular-gallery #p-img-box img {
+.popular .profileContainer .popular-gallery .p-img-box img {
   display: block;
   width: 100%;
   height: 100%;
@@ -248,51 +248,51 @@
 #tab-5-content {
   display: none;
 }
-#show {
+.show {
   display: block !important;
 }
-#tab-item {
+.tab-item {
   border-top: 1px solid transparent;
 }
-#tab-border {
+.tab-border {
   border-top: 1px solid #000;
 }
-#tab-border a i,
-#tab-border a span {
+.tab-border a i,
+.tab-border a span {
   color: #000;
   font-weight: bold;
 }
 
 
-#profile-image {
+.profile-image {
   border: 2px solid #8a3ab8;
 }
 
-#modal-image {
+.modal-image {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0#3);
+  background-color: rgba(0, 0, 0, 0.3);
   display: none;
   align-items: center;
   justify-content: center;
 }
-#modal-image #modal {
+.modal-image .modal {
   width: 400px;
   background-color: #fff;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
 }
-#modal-image #modal button {
+.modal-image .modal button {
   border: 0;
   background-color: transparent;
   height: 48px;
   cursor: pointer;
 }
-#modal-image #modal p {
+.modal-image .modal p {
   line-height: 50px;
   text-align: center;
   border-bottom: 1px solid #ddd;
@@ -300,26 +300,26 @@
   color: #222;
   font-size: 18px;
 }
-#modal-image #modal button:nth-child(2) {
+.modal-image .modal button:nth-child(2) {
   font-weight: 600;
   color: #0095f6;
 }
-#modal-image #modal button:not(:last-child) {
+.modal-image .modal button:not(:last-child) {
   border-bottom: 1px solid #dbdbdb;
 }
 
-#modal-subscribe {
+.modal-subscribe {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0#3);
+  background-color: rgba(0, 0, 0, 0.3);
   display: none;
   align-items: center;
   justify-content: center;
 }
-#modal-subscribe #subscribe {
+.modal-subscribe .subscribe {
   width: 600px;
   height: 500px;
   background-color: #fff;
@@ -327,59 +327,59 @@
   display: flex;
   flex-direction: column;
 }
-#modal-subscribe #subscribe #subscribe-header {
+.modal-subscribe .subscribe .subscribe-header {
   text-align: center;
   line-height: 50px;
   font-weight: bold;
   border-bottom: 1px solid #ddd;
   position: relative;
 }
-#modal-subscribe #subscribe #subscribe-header button {
+.modal-subscribe .subscribe .subscribe-header button {
   position: absolute;
   right: 15px;
   top: 15px;
   background-color: transparent;
   border: 0;
 }
-#modal-subscribe #subscribe #subscribe-header button i {
+.modal-subscribe .subscribe .subscribe-header button i {
   font-size: 20px;
 }
-#modal-subscribe #subscribe #subscribe-list {
+.modal-subscribe .subscribe .subscribe-list {
   overflow: hidden;
   overflow-y: auto;
 }
-#modal-subscribe #subscribe #subscribe-list #subscribe__item {
+.modal-subscribe .subscribe .subscribe-list .subscribe__item {
   display: flex;
   height: 70px;
   padding: 10px;
 }
-#modal-subscribe #subscribe #subscribe-list #subscribe__item #subscribe__img {
+.modal-subscribe .subscribe .subscribe-list .subscribe__item .subscribe__img {
   width: 80px;
   text-align: center;
 }
-#modal-subscribe #subscribe #subscribe-list #subscribe__item #subscribe__img {
+.modal-subscribe .subscribe .subscribe-list .subscribe__item .subscribe__img {
   width: 80px;
   text-align: center;
 }
-#modal-subscribe #subscribe #subscribe-list #subscribe__item #subscribe__img img {
+.modal-subscribe .subscribe .subscribe-list .subscribe__item .subscribe__img img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
 }
-#modal-subscribe #subscribe #subscribe-list #subscribe__item #subscribe__text {
+.modal-subscribe .subscribe .subscribe-list .subscribe__item .subscribe__text {
   padding-top: 5px;
 }
-#modal-subscribe #subscribe #subscribe-list #subscribe__item #subscribe__text h2 {
+.modal-subscribe .subscribe .subscribe-list .subscribe__item .subscribe__text h2 {
   font-size: 16px;
   line-height: 50px;
 }
-#modal-subscribe #subscribe #subscribe-list #subscribe__item #subscribe__btn {
+.modal-subscribe .subscribe .subscribe-list .subscribe__item .subscribe__btn {
   margin-left: auto;
   display: flex;
   align-items: center;
 }
 
-#cta {
+.cta {
   margin-right: 10px;
   padding: 10px 10px;
   border: 1px solid rgba(var(--ca6, 219, 219, 219), 1);
@@ -388,37 +388,37 @@
   font-weight: bold;
   background: transparent;
 }
-#cta#blue {
+.cta.blue {
   background: #0095f6 !important;
   color: #fff !important;
 }
 
-#modal-info {
+.modal-info {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0#3);
+  background-color: rgba(0, 0, 0, 0.3);
   display: none;
   align-items: center;
   justify-content: center;
 }
-#modal-info #modal {
+.modal-info .modal {
   width: 400px;
   background-color: #fff;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
 }
-#modal-info #modal button {
+.modal-info .modal button {
   border: 0;
   background-color: transparent;
   height: 48px;
   cursor: pointer;
 }
 
-#modal-info #modal button:not(:last-child) {
+.modal-info .modal button:not(:last-child) {
   border-bottom: 1px solid #dbdbdb;
 }
 
@@ -433,7 +433,7 @@
 
 /* Media */
 @media screen and (max-width: 935px) {
-  #profileContainer {
+  .profileContainer {
     width: 100%;
   }
 }
