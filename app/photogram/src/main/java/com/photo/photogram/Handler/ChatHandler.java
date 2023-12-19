@@ -1,8 +1,11 @@
 package com.photo.photogram.Handler;
 
 
+import com.photo.photogram.DTO.MsgDTO;
+import com.photo.photogram.Service.ChatService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.TextMessage;
@@ -17,12 +20,21 @@ public class ChatHandler extends TextWebSocketHandler {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
     private static List<WebSocketSession> list = new ArrayList<>();
 
+    @Autowired
+    ChatService chatService;
 
     //  WebSocket 클라이언트가 서버에 텍스트 메시지를 보낼 때 호출
     @Override
     protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception{
         String payload = message.getPayload();
         logger.info("payload : " + payload);
+        MsgDTO msgDTO = new MsgDTO();
+
+//        msgDTO.setSndId();
+//        msgDTO.setMsg(payload);
+//
+//
+//        chatService.senMsg();
 
         for(WebSocketSession sess : list){
             sess.sendMessage(message);
@@ -33,6 +45,14 @@ public class ChatHandler extends TextWebSocketHandler {
     @Override
     public void afterConnectionEstablished(WebSocketSession session) throws Exception{
         list.add(session);
+
+        MsgDTO msgDTO = new MsgDTO();
+        // 세션에서 데이터 가져와서 아이디 값 가져오고, 디비 -> 메세지 데이터 가져오기
+//        msgDTO.setSndId();
+//        chatService.getMsgAll();
+
+
+
         logger.info(session + "클라이언트 접속");
     }
 

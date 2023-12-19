@@ -38,14 +38,20 @@
 			<nav class="navi">
 				<ul class="navi-list">
 					<li class="navi-item"><a href="/image/story">
-							<i class="fas fa-home"></i>
-						</a></li>
+                        <i class="fas fa-home"></i>
+                    </a></li>
 					<li class="navi-item"><a href="/image/popular">
-							<i class="far fa-compass"></i>
-						</a></li>
+                        <i class="far fa-compass"></i>
+                    </a></li>
 					<li class="navi-item"><a href="/user/profile">
-							<i class="far fa-user"></i>
-						</a></li>
+                        <i class="far fa-user"></i>
+                    </a></li>
+                    <li class="navi-item"><a href="/logout">
+						<i>Logout</i>
+                    </a></li>
+                    <li class="navi-item"><a href="/chat/">
+                        <i>Chat</i>
+                    </a></li>
 				</ul>
 			</nav>
 		</div>

@@ -28,16 +28,16 @@
         $(document).ready(function(){
 
              $.ajax({
-                        type: "GET",
-                        url: "/userinfo",
-                        success: function (response) {
-                            console.log(response);
-                            // 서버에서 받은 사용자 정보를 이용하여 필요한 동작 수행
-                        },
-                        error: function (error) {
-                            console.error("Failed to retrieve user information");
-                        }
-                    });
+                type: "GET",
+                url: "/userinfo",
+                success: function (response) {
+                    console.log(response);
+                    // 서버에서 받은 사용자 정보를 이용하여 필요한 동작 수행
+                },
+                error: function (error) {
+                    console.error("Failed to retrieve user information");
+                }
+            });
 
             const username = "test";
             $("#sendMsg").on("click", (e) => {

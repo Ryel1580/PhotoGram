@@ -12,7 +12,9 @@ import java.util.Date;
 public class MsgDTO {
     int roomId;
     int sndId;
+    int rcvId;
     String sndNm;
+    String rcvNm;
     String msg;
     Date rgsDate;
     String rgsUsr;

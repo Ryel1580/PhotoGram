@@ -5,7 +5,9 @@
 <mapper namespace="com.photo.photogram.DAO.UserDAO">
 
     <select id="getMsgAll" parameterType="com.photo.photogram.DTO.UserDTO" resultType="com.photo.photogram.DTO.UserDTO">
-        select * from i_msg ;
+        select * from i_msg
+        where SND_ID = #{sndId}
+        or RCV_ID = #{sndId};
     </select>
 
     <insert id="sndMsg" parameterType="com.photo.photogram.DTO.UserDTO">
@@ -13,6 +15,8 @@
             ROOM_ID,
             SND_ID ,
             SND_NM ,
+            RCV_ID,
+            RCV_NM,
             MSG ,
             RGSDATE ,
             RGSUSR
@@ -20,6 +24,8 @@
             #{roomId},
             #{sndId},
             #{sndNm},
+            #{rcvId},
+            #{rcvNm},
             #{msg},
             NOW(),
             #(rgsUsr)
