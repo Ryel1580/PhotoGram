@@ -5,7 +5,7 @@
 <mapper namespace="com.photo.photogram.DAO.UserDAO">
 
     <select id="selectLogin" parameterType="com.photo.photogram.DTO.UserDTO" resultType="com.photo.photogram.DTO.UserDTO">
-        select USR_ID,NAME,PW,MENU_AUTHOR_AT ,USE_AT
+        select USERID,NAME,PW,MENU_AUTHOR_AT ,USE_AT
         ,EMAIL ,TEL ,RGSDATE ,RGSUSR ,MODDATE ,MODUSR
         from i_usr_mn
         WHERE EMAIL = #{email}

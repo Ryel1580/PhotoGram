@@ -2,7 +2,9 @@ package com.photo.photogram.Handler;
 
 
 import com.photo.photogram.DTO.MsgDTO;
+import com.photo.photogram.DTO.MsgLogDTO;
 import com.photo.photogram.Service.ChatService;
+import com.photo.photogram.Service.Impl.ChatServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,13 +30,6 @@ public class ChatHandler extends TextWebSocketHandler {
     protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception{
         String payload = message.getPayload();
         logger.info("payload : " + payload);
-        MsgDTO msgDTO = new MsgDTO();
-
-//        msgDTO.setSndId();
-//        msgDTO.setMsg(payload);
-//
-//
-//        chatService.senMsg();
 
         for(WebSocketSession sess : list){
             sess.sendMessage(message);
@@ -45,14 +40,7 @@ public class ChatHandler extends TextWebSocketHandler {
     @Override
     public void afterConnectionEstablished(WebSocketSession session) throws Exception{
         list.add(session);
-
-        MsgDTO msgDTO = new MsgDTO();
         // 세션에서 데이터 가져와서 아이디 값 가져오고, 디비 -> 메세지 데이터 가져오기
-//        msgDTO.setSndId();
-//        chatService.getMsgAll();
-
-
-
         logger.info(session + "클라이언트 접속");
     }
 

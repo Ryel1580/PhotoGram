@@ -4,7 +4,7 @@ import com.photo.photogram.DTO.UserDTO;
 import org.springframework.stereotype.Service;
 
 @Service
-public interface UserService {
+public interface AuthService {
 
     void signup(UserDTO userDTO);
 

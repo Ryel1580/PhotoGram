@@ -16,44 +16,33 @@
 					<img src="#" onerror="this.src='/images/person.jpeg'" />
 				</div>
 				<div class="item__username">
-					<h2>TherePrograming</h2>
+					<h2>${userInfo.userDTO.name}</h2>
+					/*value="{userData.name}" 형식으로 /> 접근 가능*/
 				</div>
 			</div>
 			<!--프로필셋팅 아이디영역end-->
 
 			<!--프로필 수정-->
 			<form id="profileUpdate"">
+			    <div class="content-item__01">
+                    <div class="item__title">ID</div>
+                    <div class="item__input">
+                        <input type="text" name="userId" placeholder="아이디"
+                            value="${userInfo.userDTO.userId}" readonly="readonly"/>
+                    </div>
+                </div>
+
 				<div class="content-item__02">
 					<div class="item__title">이름</div>
 					<div class="item__input">
 						<input type="text" name="name" placeholder="이름"
-							value="겟인데어" />
-					</div>
-				</div>
-				<div class="content-item__03">
-					<div class="item__title">유저네임</div>
-					<div class="item__input">
-						<input type="text" name="username" placeholder="유저네임"
-							value="TherePrograming" readonly="readonly" />
+							value="${userInfo.userDTO.name}" />
 					</div>
 				</div>
 				<div class="content-item__04">
 					<div class="item__title">패스워드</div>
 					<div class="item__input">
-						<input type="password" name="password" placeholder="패스워드"  />
-					</div>
-				</div>
-				<div class="content-item__05">
-					<div class="item__title">웹사이트</div>
-					<div class="item__input">
-						<input type="text" name="website" placeholder="웹 사이트"
-							value="https://github.com/codingspecialist" />
-					</div>
-				</div>
-				<div class="content-item__06">
-					<div class="item__title">소개</div>
-					<div class="item__input">
-						<textarea name="bio" id="" rows="3">프로그래머</textarea>
+						<input type="password" name="pw" placeholder="패스워드"  />
 					</div>
 				</div>
 				<div class="content-item__07">
@@ -67,20 +56,23 @@
 					<div class="item__title">이메일</div>
 					<div class="item__input">
 						<input type="text" name="email" placeholder="이메일"
-							value="getinthere@naver.com" readonly="readonly" />
+							value="${userInfo.userDTO.email}" readonly="readonly" disabled  />
 					</div>
 				</div>
 				<div class="content-item__09">
 					<div class="item__title">전회번호</div>
 					<div class="item__input">
 						<input type="text" name="tel" placeholder="전화번호"
-							value="0102222" />
+							value="${userInfo.userDTO.tel}" />
 					</div>
 				</div>
 				<div class="content-item__10">
-					<div class="item__title">성별</div>
+					<div class="item__title">가입일</div>
 					<div class="item__input">
-						<input type="text" name="gender" value="남" />
+
+						<input type="text" name="rgsDate" value="${userInfo.userDTO.rgsDate}" readonly="readonly" disabled />
+						</br>
+						<input type="text" name="rgsUsr" value="${userInfo.userDTO.rgsUsr}" readonly="readonly" disabled />
 					</div>
 				</div>
 
@@ -88,7 +80,7 @@
 				<div class="content-item__11">
 					<div class="item__title"></div>
 					<div class="item__input">
-						<button>제출</button>
+						<button type="button" onClick="update()">제출</button>
 					</div>
 				</div>
 				<!--제출버튼end-->

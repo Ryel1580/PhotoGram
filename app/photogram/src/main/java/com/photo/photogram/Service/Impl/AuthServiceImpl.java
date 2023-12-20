@@ -2,7 +2,7 @@ package com.photo.photogram.Service.Impl;
 
 import com.photo.photogram.DAO.UserDAO;
 import com.photo.photogram.DTO.UserDTO;
-import com.photo.photogram.Service.UserService;
+import com.photo.photogram.Service.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor // final 로 정의된 필드에 관해 생성자 자동 생성
-public class UserServiceImpl implements UserService {
+public class AuthServiceImpl implements AuthService {
 
     @Autowired
     UserDAO userDAO;

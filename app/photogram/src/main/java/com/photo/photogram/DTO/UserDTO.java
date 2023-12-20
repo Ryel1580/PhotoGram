@@ -26,6 +26,6 @@ public class UserDTO {
     String tel;
     Date rgsDate;
     String rgsUsr;
-    Date moddate;
+    Date modDate;
     String modUsr;
 }

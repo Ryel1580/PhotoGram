@@ -2,7 +2,7 @@ package com.photo.photogram.Controller;
 
 import com.photo.photogram.DTO.UserDTO;
 import com.photo.photogram.Handler.ex.CustomValidationException;
-import com.photo.photogram.Service.UserService;
+import com.photo.photogram.Service.AuthService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +25,7 @@ import java.util.Map;
 public class AuthController {
 
     @Autowired
-    UserService userService;
+    AuthService authService;
 
     @GetMapping("/signup")
     public String signupPage() {
@@ -51,7 +51,7 @@ public class AuthController {
             throw new CustomValidationException("result : 유효성 검사 실패", errorMap);
         } else {
             try {
-                userService.signup(userDTO);
+                authService.signup(userDTO);
                 return new ResponseEntity<>("result : OK" , HttpStatus.OK);
             } catch (Exception e) {
                 return new ResponseEntity<>("result : " + e.getMessage(), HttpStatus.BAD_REQUEST);
