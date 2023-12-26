@@ -1,41 +1,26 @@
-<!-- UserMapper.xml -->
+<!-- AuthMapper.xml -->
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<!-- 별칭(Alias)을 지정한 namespace -->
-<mapper namespace="com.photo.photogram.DAO.UserDAO">
 
-    <select id="selectLogin" parameterType="com.photo.photogram.DTO.UserDTO" resultType="com.photo.photogram.DTO.UserDTO">
-        select USERID,NAME,PW,MENU_AUTHOR_AT ,USE_AT
+<mapper namespace="com.photo.photogram.DAO.UserDAO">
+    <update id="update" parameterType="com.photo.photogram.DTO.UserDTO">
+        UPDATE I_USR_MN
+        <set>
+            <if test="name != null">NAME = #{name},</if>
+            <if test="tel != null">TEL = #{tel},</if>
+            <if test="pw != null">PW = #{pw},</if>
+            MODDATE = NOW()
+        </set>
+        WHERE USR_ID = #{usrId}
+    </update>
+
+
+
+    <select id="selectUser" parameterType="int" resultType="com.photo.photogram.DTO.UserDTO">
+        select USR_ID,NAME,PW,MENU_AUTHOR_AT ,USE_AT
         ,EMAIL ,TEL ,RGSDATE ,RGSUSR ,MODDATE ,MODUSR
         from i_usr_mn
-        WHERE EMAIL = #{email}
+        WHERE USR_ID = #{usrId}
     </select>
-
-
-    <insert id="signup" parameterType="com.photo.photogram.DTO.UserDTO">
-        INSERT INTO i_usr_mn (
-            NAME,
-            PW,
-            MENU_AUTHOR_AT,
-            USE_AT,
-            EMAIL,
-            TEL,
-            RGSDATE,
-            RGSUSR,
-            MODDATE,
-            MODUSR
-        ) VALUES (
-            #{name},
-            #{pw},
-            DEFAULT,
-            DEFAULT,
-            #{email},
-            #{tel},
-            DEFAULT,
-            DEFAULT,
-            DEFAULT,
-            DEFAULT
-        )
-    </insert>
 
 </mapper>

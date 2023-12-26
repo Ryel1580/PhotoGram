@@ -1,0 +1,41 @@
+<!-- AuthMapper.xml -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 별칭(Alias)을 지정한 namespace -->
+<mapper namespace="com.photo.photogram.DAO.AuthDAO">
+
+    <select id="selectLogin" parameterType="com.photo.photogram.DTO.UserDTO" resultType="com.photo.photogram.DTO.UserDTO">
+        select USR_ID,NAME,PW,MENU_AUTHOR_AT ,USE_AT
+        ,EMAIL ,TEL ,RGSDATE ,RGSUSR ,MODDATE ,MODUSR
+        from i_usr_mn
+        WHERE EMAIL = #{email}
+    </select>
+
+
+    <insert id="signup" parameterType="com.photo.photogram.DTO.UserDTO">
+        INSERT INTO i_usr_mn (
+            NAME,
+            PW,
+            MENU_AUTHOR_AT,
+            USE_AT,
+            EMAIL,
+            TEL,
+            RGSDATE,
+            RGSUSR,
+            MODDATE,
+            MODUSR
+        ) VALUES (
+            #{name},
+            #{pw},
+            DEFAULT,
+            DEFAULT,
+            #{email},
+            #{tel},
+            DEFAULT,
+            DEFAULT,
+            DEFAULT,
+            DEFAULT
+        )
+    </insert>
+
+</mapper>

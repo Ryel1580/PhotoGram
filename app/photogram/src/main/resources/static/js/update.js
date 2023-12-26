@@ -1,15 +1,15 @@
 // (1) 회원정보 수정
-function update() {
+function update(id) {
 
-    console.log("호출");
     let data =$("#profileUpdate").serialize();
 
     console.log(data);
 
     $.ajax({
         type:"put",
-        url:"/api/user/${userId}",
-        contentType:"application/x-www-form-urlencoded; charset=utf-8",
+        url: `/api/user/${id}`,
+        contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+        data: data,
         dataType:"json"
     }).done(res=>{
         console.log("성공");

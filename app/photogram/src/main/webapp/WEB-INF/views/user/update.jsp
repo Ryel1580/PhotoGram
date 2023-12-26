@@ -27,8 +27,8 @@
 			    <div class="content-item__01">
                     <div class="item__title">ID</div>
                     <div class="item__input">
-                        <input type="text" name="userId" placeholder="아이디"
-                            value="${userInfo.userDTO.userId}" readonly="readonly"/>
+                        <input type="text" name="usrId" placeholder="아이디"
+                            value="${userInfo.userDTO.usrId}" readonly="readonly"/>
                     </div>
                 </div>
 
@@ -63,7 +63,7 @@
 					<div class="item__title">전회번호</div>
 					<div class="item__input">
 						<input type="text" name="tel" placeholder="전화번호"
-							value="${userInfo.userDTO.tel}" />
+                        value="${userInfo.userDTO.tel}" />
 					</div>
 				</div>
 				<div class="content-item__10">
@@ -80,7 +80,7 @@
 				<div class="content-item__11">
 					<div class="item__title"></div>
 					<div class="item__input">
-						<button type="button" onClick="update()">제출</button>
+						<button type="button" onClick="update(${userInfo.userDTO.usrId})">제출</button>
 					</div>
 				</div>
 				<!--제출버튼end-->

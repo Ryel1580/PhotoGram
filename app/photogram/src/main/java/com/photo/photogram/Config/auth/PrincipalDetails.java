@@ -23,7 +23,7 @@ public class PrincipalDetails implements UserDetails {
     }
 
     public int getId(){
-        return userDTO.getUserId();
+        return userDTO.getUsrId();
     }
 
     @Override

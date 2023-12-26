@@ -1,6 +1,6 @@
 package com.photo.photogram.Service.Impl;
 
-import com.photo.photogram.DAO.UserDAO;
+import com.photo.photogram.DAO.AuthDAO;
 import com.photo.photogram.DTO.UserDTO;
 import com.photo.photogram.Service.AuthService;
 import lombok.RequiredArgsConstructor;
@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class AuthServiceImpl implements AuthService {
 
     @Autowired
-    UserDAO userDAO;
+    AuthDAO authDAO;
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
@@ -35,7 +35,7 @@ public class AuthServiceImpl implements AuthService {
         logger.info("TEL" + userDTO.getTel());
         logger.info("===============================================");
 
-        userDAO.signup(userDTO);
+        authDAO.signup(userDTO);
 
     }
 

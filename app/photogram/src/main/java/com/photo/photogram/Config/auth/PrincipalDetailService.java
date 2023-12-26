@@ -1,7 +1,7 @@
 package com.photo.photogram.Config.auth;
 
 
-import com.photo.photogram.DAO.UserDAO;
+import com.photo.photogram.DAO.AuthDAO;
 import com.photo.photogram.DTO.UserDTO;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
@@ -18,18 +18,18 @@ public class PrincipalDetailService implements UserDetailsService {
     // 로그인 프로세스가 실행시 UserDetailService 가 낚아챔
 
     @Autowired
-    UserDAO userDAO;
+    AuthDAO authDAO;
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 
-        UserDTO result = userDAO.selectLogin(email);
+        UserDTO result = authDAO.selectLogin(email);
 
         if (result != null) {
             logger.info("==========Result Data==========");
-            logger.info("ID : " +result.getUserId());
+            logger.info("ID : " +result.getUsrId());
             logger.info("EMAIL : " + result.getEmail());
             logger.info("PW : " + result.getPw());
             logger.info("===============================");

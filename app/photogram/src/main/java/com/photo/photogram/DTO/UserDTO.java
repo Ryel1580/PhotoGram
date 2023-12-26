@@ -13,7 +13,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserDTO {
-    int userId;
+    int usrId;
     @Size(min =2 , max = 20)
     @Column(nullable = false) // null 불가능
     String name;
