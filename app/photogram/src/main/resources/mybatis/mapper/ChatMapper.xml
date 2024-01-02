@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!-- 별칭(Alias)을 지정한 namespace -->
-<mapper namespace="com.photo.photogram.DAO.AuthDAO">
+<mapper namespace="com.photo.photogram.DAO.ChatDAO">
 
     <select id="getMsgAll" parameterType="com.photo.photogram.DTO.UserDTO" resultType="com.photo.photogram.DTO.UserDTO">
         select * from i_msg

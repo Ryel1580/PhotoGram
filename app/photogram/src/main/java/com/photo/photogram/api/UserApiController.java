@@ -3,7 +3,6 @@ package com.photo.photogram.api;
 
 import com.photo.photogram.Config.auth.PrincipalDetails;
 import com.photo.photogram.DTO.UserDTO;
-import com.photo.photogram.Service.AuthService;
 import com.photo.photogram.Service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,8 +19,9 @@ public class UserApiController {
 
     @Autowired
     UserService userService;
-
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
+
+    // 회원 정보 수정
     @PutMapping("/api/user/{id}")
     public ResponseEntity<String> update(@PathVariable int id, UserDTO userDTO, @AuthenticationPrincipal PrincipalDetails principalDetails)throws Exception{
         logger.info(String.valueOf(userDTO));
@@ -31,7 +31,7 @@ public class UserApiController {
         }else{
             UserDTO selectuser = userService.selectUser(id);
             principalDetails.setUserDTO(selectuser);
-            return new ResponseEntity<>("result : "+result, HttpStatus.OK);
+            return new ResponseEntity<>("{\"result\": \"success\"}", HttpStatus.OK);
         }
     }
 }

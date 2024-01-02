@@ -39,6 +39,7 @@ public class AuthController {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
+    // 회원가입
     @PostMapping("/signup.json")
     public ResponseEntity<Object> signUpJson(@Valid @RequestBody UserDTO userDTO, BindingResult bindingResult) throws Exception {
 

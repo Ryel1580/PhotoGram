@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="../layout/header.jsp"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,36 +12,44 @@
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
+
 <body>
+<main class="main">
+	<section class="container">
     <div>
         <div class="wrap" id="wrap">
-
         </div>
 
         <div class="inputArea">
             <form class="label" id="submitMsg">
                 <textarea class="textBox" id="msgData" type="text"></textarea>
-                <button type="button" id="sendMsg">전송</button>
+                <button type="button" class="button" id="sendMsg">전송</button>
             </form>
         </div>
     </div>
 
+    <div>
+        <input type="hidden" id = "name" value="${userInfo.userDTO.name}" />
+        <input type="hidden" id = "id" value="${userInfo.userDTO.usrId}" />
+    </div>
+
+    <section>
+<main>
     <script>
         $(document).ready(function(){
+            let username = $('#name').val();
+            let userId = $('#id').val();
 
-             $.ajax({
-                type: "GET",
-                url: "/userinfo",
-                success: function (response) {
-                    console.log(response);
-                    // 서버에서 받은 사용자 정보를 이용하여 필요한 동작 수행
-                },
-                error: function (error) {
-                    console.error("Failed to retrieve user information");
+            <!-- Enter 키 전송 및 shiftEnter 전송 막기 -->
+            $("#msgData").on("keyup click", (e) => {
+               if (e.key === "Enter" && !e.shiftKey) {
+                 if (event.key === "Enter" && event.shiftKey) {
+                    return null;
+                    }
+                    send();
                 }
             });
 
-            const username = "test";
             $("#sendMsg").on("click", (e) => {
                 send();
             });
@@ -49,6 +59,11 @@
             websocket.onmessage = onMessage;
             websocket.onopen = onOpen;
             websocket.onclose = onClose;
+
+            function scrollToBottom() {
+                var wrap = document.getElementById("wrap");
+                wrap.scrollTop = wrap.scrollHeight;
+            }
 
             function send(){
                 let MsgDTO ={
@@ -80,10 +95,8 @@
                         console.error("에러: " + textStatus, errorThrown);
                         msg.val('');  // 입력 필드 초기화
                     }
-
                 });
-
-
+                scrollToBottom();
             }
 
             function onClose(e){

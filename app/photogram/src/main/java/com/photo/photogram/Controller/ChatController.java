@@ -32,9 +32,13 @@ public class ChatController extends Socket {
 
     @GetMapping("/")
     public String msg(){
-        return "chat/chat";
+        return "chat/chatRoomList";
     }
 
+    @GetMapping("/chat")
+    public String openChat(){
+        return "chat/chat";
+    }
     @GetMapping("/getMsgAll")
     public ResponseEntity<String> getMsgAll(@RequestBody MsgDTO msgDTO)throws Exception{
         logger.info(String.valueOf(msgDTO));

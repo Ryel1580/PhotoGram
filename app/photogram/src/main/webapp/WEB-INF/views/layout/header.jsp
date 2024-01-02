@@ -48,11 +48,11 @@
 					<li class="navi-item"><a href="/user/1">
                         <i class="far fa-user"></i>
                     </a></li>
+                    <li class="navi-item"><a href="/chat/">
+                        <i class="fas fa-paper-plane"></i>
+                    </a></li>
                     <li class="navi-item"><a href="/logout">
 						<i>Logout</i>
-                    </a></li>
-                    <li class="navi-item"><a href="/chat/">
-                        <i>Chat</i>
                     </a></li>
 				</ul>
 			</nav>

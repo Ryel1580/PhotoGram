@@ -17,7 +17,7 @@
 				</div>
 				<div class="item__username">
 					<h2>${userInfo.userDTO.name}</h2>
-					/*value="{userData.name}" 형식으로 /> 접근 가능*/
+					<!-- value="{userData.name}" 형식으로 /> 접근 가능 -->
 				</div>
 			</div>
 			<!--프로필셋팅 아이디영역end-->
