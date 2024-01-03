@@ -2,6 +2,7 @@ package com.photo.photogram.Service.Impl;
 
 import com.photo.photogram.DAO.AuthDAO;
 import com.photo.photogram.DTO.UserDTO;
+import com.photo.photogram.Handler.ex.CustomValidationException;
 import com.photo.photogram.Service.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.interceptor.TransactionAspectSupport;
 
 
 @Service
@@ -25,20 +27,14 @@ public class AuthServiceImpl implements AuthService {
     @Override
     @Transactional
     public void signup(UserDTO userDTO){
-        String rawPassword = userDTO.getPw(); // 기존 pw 를 암호화
-        String encPassword = bCryptPasswordEncoder.encode(rawPassword); // 암호화된 패스워드 디코딩
-        userDTO.setPw(encPassword);
-        logger.info("====================RcvData====================");
-        logger.info("Name" + userDTO.getName());
-        logger.info("PW" + userDTO.getPw()); // 암호화된 pw 로 입력
-        logger.info("EMAIL" + userDTO.getEmail());
-        logger.info("TEL" + userDTO.getTel());
-        logger.info("===============================================");
 
-        authDAO.signup(userDTO);
+            String rawPassword = userDTO.getPw(); // 기존 pw 를 암호화
+            String encPassword = bCryptPasswordEncoder.encode(rawPassword); // 암호화된 패스워드 디코딩
+            userDTO.setPw(encPassword);
+            logger.info("User SignUp RcvData=======================================================================================");
+            logger.info(String.valueOf(userDTO));
+            logger.info("=======================================================================================");
+            authDAO.signup(userDTO);
 
     }
-
-
-
-    }
+}

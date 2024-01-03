@@ -36,7 +36,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .and()
                 .formLogin()
                     .loginPage("/auth/signin") // 로그인 페이지 주소 GET
-                    .loginProcessingUrl("/auth/login.json") // 로그인 프로세스 POST
+                    .loginProcessingUrl("/auth/signin.json") // 로그인 프로세스 POST
                     .defaultSuccessUrl("/")
                     .permitAll()
                 .and()

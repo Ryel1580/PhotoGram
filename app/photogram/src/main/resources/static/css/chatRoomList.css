@@ -113,12 +113,12 @@ body {
   background-color: #f0f0f0;
 }
 
-.chat-list {
+.chat-list, .user-list{
   max-width: 600px;
   margin: 20px auto;
 }
 
-.chat {
+.chat, .user {
   display: flex;
   align-items: center;
   padding: 10px;
@@ -128,7 +128,7 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.chat:hover  {
+.chat:hover , .user:hover {
   background-color:#a3a3a3;
   transition: 0.3s;
 }
@@ -140,7 +140,7 @@ body {
   margin-right: 10px;
 }
 
-.chat-info {
+.chat-info, .user-info {
   flex-grow: 1;
 }
 

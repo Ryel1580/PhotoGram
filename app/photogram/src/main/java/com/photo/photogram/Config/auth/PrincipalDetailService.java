@@ -28,11 +28,9 @@ public class PrincipalDetailService implements UserDetailsService {
         UserDTO result = authDAO.selectLogin(email);
 
         if (result != null) {
-            logger.info("==========Result Data==========");
-            logger.info("ID : " +result.getUsrId());
-            logger.info("EMAIL : " + result.getEmail());
-            logger.info("PW : " + result.getPw());
-            logger.info("===============================");
+            logger.info("Login Result Data===================================================");
+            logger.info(String.valueOf(result));
+            logger.info("==============================================================");
 
             return new PrincipalDetails(result);
 

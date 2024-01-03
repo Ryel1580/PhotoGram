@@ -25,7 +25,7 @@
                         <h1><img src="/images/logo.jpg" alt=""></h1>
 
                         <!-- 로그인 인풋 -->
-                        <form class="login__input" action="/auth/login.json" method="POST">
+                        <form class="login__input" action="/auth/signin.json" method="POST">
                             <input type="text" name="username" id="username" placeholder="이메일" required="required" value="test@test.com"/>
                             <input type="password" name="password" id="password" placeholder="비밀번호" required="required" value="123"/>
                             <!-- 버튼에 ID 추가 -->

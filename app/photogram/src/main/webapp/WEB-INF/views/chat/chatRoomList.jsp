@@ -20,30 +20,29 @@
 	        <button type="button" class="list" id="chatList" onClick="chatList(${userInfo.userDTO.usrId})">채팅 목록</button>
 	        <button type="button" class="list" id="getUser" onClick="getUser(${userInfo.userDTO.usrId})">사용자 목록</button>
 	    </div>
-
+    <!-- 아이탬 영역 -->
     <div>
         <div class="wrap" id="wrap">
-            <div class="chat-list">
-              <div class="chat">
-                <div class="chat-info">
-                  <h2>User 1</h2>
-                  <p>Last message...</p>
-                </div>
-              </div>
+            <div class="chat-list" id ="chat-list">
+            </div>
 
-              <div class="chat">
-                <img src="user2.jpg" alt="User 2" class="profile-pic">
-                <div class="chat-info">
-                  <h2>User 2</h2>
-                  <p>Last message...</p>
-                </div>
-              </div>
-        </div>
-        <div>
-
+            <div class="chat-list" id ="user-list">
+            </div>
         </div>
     </div>
 
+    <!-- 채팅 모달 -->
+    <div class="modal-info" onclick="modalInfo()">
+    	<div class="modal">
+    		<button onclick=enterChatRoom()>채팅 시작</button>
+    		<button onclick="location.href='/logout'">사용자 정보 보기</button>
+    		<button onclick="closePopup('.modal-info')">취소</button>
+    	</div>
+    </div>
+
+
+
+    <!-- hidden -->
     <div>
         <input type="hidden" id = "name"  value="${userInfo.userDTO.name}" />
         <input type="hidden" id = "id"  value="${userInfo.userDTO.usrId}" />
@@ -51,6 +50,8 @@
 
     <section>
 <main>
-    <script src="/js/roomList.js"></script>
+    <script src="/js/chatRoomList.js"></script>
 </body>
 </html>
+
+<%@ include file="../layout/footer.jsp"%>

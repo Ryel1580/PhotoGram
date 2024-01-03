@@ -28,9 +28,9 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public int update(int id ,UserDTO userDTO){
-        logger.info("====================RcvData====================");
+        logger.info("User Update RcvData================================================================================");
         logger.info(String.valueOf(userDTO));
-        logger.info("===============================================");
+        logger.info("=======================================================================================");
         // 비밀번호 암호화
         userDTO.setPw(encoder.encode(userDTO.getPw()));
         int result = userDAO.update(userDTO);

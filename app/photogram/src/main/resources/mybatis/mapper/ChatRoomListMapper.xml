@@ -11,4 +11,20 @@
         WHERE USR_ID = #{id}
     </select>
 
+    <select id="getUser" parameterType="int" resultType="com.photo.photogram.DTO.UserDTO">
+        select USR_ID,NAME,PW,MENU_AUTHOR_AT ,USE_AT
+        ,EMAIL ,TEL ,RGSDATE ,RGSUSR ,MODDATE ,MODUSR
+        from i_usr_mn
+        where use_at = 'Y'
+    </select>
+
+    <!-- 수정해야함 -->
+    <select id="test" parameterType="int" resultType="com.photo.photogram.DTO.UserDTO">
+        SELECT ROOM_ID
+        FROM I_ROOM
+        WHERE USR_ID IN (1, 2) -- 1번 usr_id와 2번 usr_id를 대체하십시오
+        GROUP BY ROOM_ID
+        HAVING COUNT(DISTINCT USR_ID) = 2;
+    </select>
+
 </mapper>

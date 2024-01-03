@@ -2,13 +2,15 @@ package com.photo.photogram.Service.Impl;
 
 import com.photo.photogram.DAO.ChatRoomListDAO;
 import com.photo.photogram.DTO.ChatRoomListDTO;
+import com.photo.photogram.DTO.UserDTO;
 import com.photo.photogram.Service.ChatRoomListService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class ChatRoomListServiceImpl implements ChatRoomListService {
@@ -23,7 +25,8 @@ public class ChatRoomListServiceImpl implements ChatRoomListService {
       return chatRoomListDAO.chatList(id);
     }
 
-//    public ChatRoomListDTO getUser(int id){
-//        return null;
-//    }
+    @Override
+    public List<UserDTO> getUser(int id){
+        return chatRoomListDAO.getUser(id);
+    }
 }

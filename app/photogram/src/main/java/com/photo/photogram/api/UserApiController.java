@@ -24,7 +24,6 @@ public class UserApiController {
     // 회원 정보 수정
     @PutMapping("/api/user/{id}")
     public ResponseEntity<String> update(@PathVariable int id, UserDTO userDTO, @AuthenticationPrincipal PrincipalDetails principalDetails)throws Exception{
-        logger.info(String.valueOf(userDTO));
         int result = userService.update(id, userDTO);
         if(result == 0){
             return new ResponseEntity<>("reslut : " +result, HttpStatus.BAD_REQUEST);

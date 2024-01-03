@@ -8,5 +8,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface AuthDAO {
     UserDTO selectLogin(String email);
-    boolean signup (UserDTO userDTO);
+    int signup (UserDTO userDTO);
 }
