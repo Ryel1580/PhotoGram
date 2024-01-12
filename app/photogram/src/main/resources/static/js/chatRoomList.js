@@ -1,12 +1,14 @@
+let selectUser;
+
 $(document).ready(function() {
-    $("#chat-list").dblclick(function() {
+    $("#chat-list").on("dblclick", ".user", function() {
+        selectUser = $(this).find("#usrId").val();
+        console.log(selectUser);
         popup('.modal-info');
     });
-
-
-
-
 });
+
+
 
 // 채팅방 리스트 불러오기
 function chatList(id) {
@@ -58,19 +60,20 @@ function chatList(id) {
      });
  }
 
-// 채팅방 입장 수정해야함
+// 채팅방 ajax 입장 수정해야함
  function enterChatRoom() {
-     let enterChatRoomDTO = {
-         sndId: $('#id').val(),
-         rcvId: $('#usrId').val(),
-         rgsDate: $('#rgsDate').val()
-     };
+    let enterChatRoomDTO = {
+         sndId: $("#id").val(),
+         rcvId: selectUser
+    };
+     console.log(enterChatRoomDTO);
 
      $.ajax({
-         type: "GET",
-         url: "/api/enterChatRoom",
-         contentType: "application/json",
-         data: JSON.stringify(enterChatRoomDTO)
+        type: "GET",
+        url: "/api/enterChatRoom",
+        contentType: 'application/json; charset=utf-8',
+        data: JSON.stringify(enterChatRoomDTO),
+        dataType: "json"
      }).done(res => {
          console.log("성공");
      }).fail((xhr, status, error) => {
@@ -85,7 +88,6 @@ function chatList(id) {
 function modalInfo() {
 	$(".modal-info").css("display", "none");
 }
-
 
 // 채팅 모달 열기 닫기
 function popup(obj) {
