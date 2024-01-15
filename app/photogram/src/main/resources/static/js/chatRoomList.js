@@ -71,9 +71,9 @@ function chatList(id) {
      $.ajax({
         type: "GET",
         url: "/api/enterChatRoom",
+        dataType: "json",
         contentType: 'application/json; charset=utf-8',
-        data: JSON.stringify(enterChatRoomDTO),
-        dataType: "json"
+        data: JSON.stringify(enterChatRoomDTO)
      }).done(res => {
          console.log("성공");
      }).fail((xhr, status, error) => {
