@@ -2,6 +2,7 @@ package com.photo.photogram.Service.Impl;
 
 import com.photo.photogram.DAO.ChatRoomListDAO;
 import com.photo.photogram.DTO.ChatRoomListDTO;
+import com.photo.photogram.DTO.EnterChatRoomDTO;
 import com.photo.photogram.DTO.UserDTO;
 import com.photo.photogram.Service.ChatRoomListService;
 import org.slf4j.Logger;
@@ -28,5 +29,13 @@ public class ChatRoomListServiceImpl implements ChatRoomListService {
     @Override
     public List<UserDTO> getUser(int id){
         return chatRoomListDAO.getUser(id);
+    }
+
+    public void getRoomNum(EnterChatRoomDTO enterChatRoomDTO){
+        List<EnterChatRoomDTO> getRoomList = chatRoomListDAO.getRoomNum(enterChatRoomDTO);
+
+        if(getRoomList.isEmpty()){
+            chatRoomListDAO.insertRoomNum(enterChatRoomDTO);
+        }
     }
 }

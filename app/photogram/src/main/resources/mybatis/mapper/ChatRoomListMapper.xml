@@ -19,7 +19,7 @@
     </select>
 
     <!-- 수정해야함 -->
-    <select id="test" parameterType="int" resultType="com.photo.photogram.DTO.UserDTO">
+    <select id="getRoomNum" parameterType="com.photo.photogram.DTO.ChatRoomListDTO" resultType="com.photo.photogram.DTO.ChatRoomListDTO">
         SELECT ROOM_ID
         FROM I_ROOM
         WHERE USR_ID IN (1, 2) -- 1번 usr_id와 2번 usr_id를 대체하십시오

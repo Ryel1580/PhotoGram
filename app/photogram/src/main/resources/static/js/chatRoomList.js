@@ -69,7 +69,7 @@ function chatList(id) {
      console.log(enterChatRoomDTO);
 
      $.ajax({
-        type: "GET",
+        type: "Post",
         url: "/api/enterChatRoom",
         dataType: "json",
         contentType: 'application/json; charset=utf-8',
